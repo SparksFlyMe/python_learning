@@ -12,7 +12,7 @@ def f(x):
     return x * x
 
 
-m = map(f, list(range(10)))  # map()传入的第一个参数是f，即函数对象本身。由于结果r是一个Iterator，Iterator是惰性序列，因此通过list()函数让它把整个序列都计算出来并返回一个list。
+m = map(f, list(range(10)))  # map()传入的第一个参数是f，即函数对象本身。由于结果m是一个Iterator，Iterator是惰性序列，因此通过list()函数让它把整个序列都计算出来并返回一个list。
 print(type(m), list(m))
 
 # reduce()的用法。reduce把一个函数作用在一个序列[x1, x2, x3, ...]上，这个函数必须接收两个参数。reduce把结果继续和序列的下一个元素做累积计算，
@@ -25,5 +25,5 @@ def add(x, y):
     return x + y
 
 
-r = reduce(add, [1, 2, 3, 4])
+r = reduce(add, [1, 2, 3, 4])  # ((1+2)+3)+4
 print(type(r), r)
